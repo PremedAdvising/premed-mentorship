@@ -95,6 +95,31 @@ max-width:650px;
 opacity:.92;
 }
 
+.hero-grid{
+display:grid;
+grid-template-columns:1.2fr 0.8fr;
+gap:40px;
+align-items:center;
+}
+
+.hero-card{
+background:white;
+color:#1C2733;
+padding:28px;
+border-radius:18px;
+box-shadow:0 20px 40px rgba(0,0,0,.2);
+}
+
+.hero-card h3{
+margin-top:0;
+color:#1E3A5F;
+}
+
+.hero-card ul{
+padding-left:18px;
+margin-top:10px;
+}
+
 .priority{
 background:rgba(255,255,255,.12);
 border:1px solid rgba(255,255,255,.2);
@@ -166,19 +191,37 @@ border:1px solid #e3e7ee;
 </header>
 
 <section class="hero">
-<div class="container">
+<div class="container hero-grid">
 
-<h1>Free Pre-Med Mentorship for First-Generation Students Navigating Medicine Without Family Connections</h1>
+<div>
+
+<h1>Free Pre-Med Mentorship for First-Generation Students</h1>
 
 <p>
-Guidance from Laura G., a medical student at the Keck School of Medicine of USC, for students pursuing medicine without access to strong mentorship or physicians in the family.
+Guidance from Laura G., a medical student at the Keck School of Medicine of USC, for students navigating medicine without family connections in healthcare.
 </p>
 
 <div class="priority">
-Priority given to first-generation Hispanic/Latino and Middle Eastern students with no physicians in their family. All students are welcome to apply.
+Priority given to first-generation Hispanic/Latino and Middle Eastern students with no physicians in their family.
 </div>
 
 <a class="button" href="#apply">Apply for Mentorship</a>
+
+</div>
+
+<div class="hero-card">
+
+<h3>Mentorship Highlights</h3>
+
+<ul>
+<li>15+ students mentored</li>
+<li>USC medical student mentor</li>
+<li>Focus on first-generation students</li>
+<li>Spanish-speaking community experience</li>
+<li>8 students per month</li>
+</ul>
+
+</div>
 
 </div>
 </section>
@@ -631,5 +674,6 @@ A mentorship space built to help students navigate the path to medicine with mor
 </body>
 
 </html>
+
 
 
