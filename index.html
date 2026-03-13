@@ -137,6 +137,79 @@ max-width:660px;
 color:rgba(255,255,255,.92);
 }
 
+.hero-left{
+display:flex;
+flex-direction:column;
+align-items:flex-start;
+}
+
+.hero-subtitle{
+margin-top:18px;
+margin-bottom:0;
+font-size:1.25rem;
+font-weight:700;
+color:rgba(255,255,255,.98);
+max-width:660px;
+}
+
+.hero-description{
+margin-top:16px;
+font-size:1.08rem;
+line-height:1.75;
+max-width:660px;
+color:rgba(255,255,255,.90);
+}
+
+.hero-buttons{
+display:flex;
+gap:14px;
+flex-wrap:wrap;
+margin-top:30px;
+}
+
+.btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:14px 22px;
+border-radius:999px;
+font-weight:700;
+text-decoration:none;
+transition:.2s ease;
+}
+
+.btn-primary{
+background:#D9A441;
+color:#10263d;
+border:1px solid #D9A441;
+}
+
+.btn-primary:hover{
+transform:translateY(-1px);
+filter:brightness(1.02);
+}
+
+.btn-secondary{
+background:rgba(255,255,255,.10);
+color:white;
+border:1px solid rgba(255,255,255,.22);
+backdrop-filter:blur(6px);
+}
+
+.btn-secondary:hover{
+background:rgba(255,255,255,.16);
+}
+
+@media (max-width: 900px){
+.hero-grid{
+grid-template-columns:1fr;
+gap:40px;
+}
+
+.hero-left{
+align-items:flex-start;
+}
+}
 .priority{
 background:rgba(255,255,255,.14);
 border:1px solid rgba(255,255,255,.22);
@@ -312,8 +385,16 @@ Free • Virtual • Longitudinal Mentorship
 </div>
 
 <h1>
-Pre-Med Mentorship for Students Navigating Medicine Without Family Connections
+INTERIM
 </h1>
+
+<p style="font-weight:600; font-size:1.25rem;">
+Mentorship for Representation in Medicine
+</p>
+
+<p>
+Supporting students in the interim between dreaming of medicine and becoming a physician.
+</p>
 
 <p>
 I'm Laura, a medical student at the Keck School of Medicine of USC offering individualized mentorship for students navigating the path to medicine without physicians in their family or strong healthcare connections.
