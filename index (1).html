@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pre-Med Mentorship | Laura G.</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+font-family:Inter, sans-serif;
+background:#F5F7FA;
+color:#1C2733;
+line-height:1.6;
+}
+
+.container{
+width:min(1150px,92%);
+margin:auto;
+}
+
+header{
+position:sticky;
+top:0;
+z-index:1000;
+background:rgba(255,255,255,.92);
+backdrop-filter:blur(10px);
+border-bottom:1px solid #e3e7ee;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 0;
+gap:20px;
+}
+
+.brand{
+font-weight:800;
+color:#1E3A5F;
+font-size:1rem;
+}
+
+.nav-links{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.nav-links a{
+text-decoration:none;
+font-weight:600;
+color:#1E3A5F;
+font-size:.96rem;
+}
+
+.hero{
+background:
+radial-gradient(circle at 15% 20%, rgba(217,164,65,.20), transparent 28%),
+radial-gradient(circle at 85% 25%, rgba(255,255,255,.10), transparent 22%),
+radial-gradient(circle at 75% 85%, rgba(79,124,172,.22), transparent 28%),
+linear-gradient(135deg,#10263d 0%,#1E3A5F 48%,#34618f 100%);
+color:white;
+padding:90px 0 80px;
+position:relative;
+overflow:hidden;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+width:380px;
+height:380px;
+top:-140px;
+right:-110px;
+border-radius:50%;
+background:rgba(217,164,65,.16);
+filter:blur(60px);
+}
+
+.hero::after{
+content:"";
+position:absolute;
+width:320px;
+height:320px;
+bottom:-120px;
+left:-80px;
+border-radius:50%;
+background:rgba(255,255,255,.08);
+filter:blur(60px);
+}
+
+.hero-grid{
+display:grid;
+grid-template-columns:1.15fr .85fr;
+gap:56px;
+align-items:center;
+position:relative;
+z-index:1;
+}
+
+.eyebrow{
+display:inline-block;
+background:rgba(255,255,255,.12);
+border:1px solid rgba(255,255,255,.18);
+padding:8px 14px;
+border-radius:999px;
+font-size:.88rem;
+font-weight:600;
+margin-bottom:18px;
+}
+
+.hero h1{
+font-size:clamp(3.5rem,7vw,5rem);
+font-weight:900;
+line-height:1.05;
+letter-spacing:-2px;
+margin:0 0 10px 0;
+}
+
+.hero-acronym{
+font-size:.95rem;
+line-height:1.6;
+margin-top:12px;
+max-width:650px;
+color:rgba(255,255,255,.85);
+}
+
+.hero p{
+margin-top:22px;
+font-size:1.12rem;
+max-width:660px;
+color:rgba(255,255,255,.92);
+}
+
+.hero-left{
+display:flex;
+flex-direction:column;
+align-items:flex-start;
+}
+
+.hero-title{
+position:relative;
+display:inline-block;
+}
+
+.hero-title::after{
+content:"";
+display:block;
+width:70px;
+height:4px;
+margin:10px 0 8px 0;
+background:#D9A441;
+border-radius:2px;
+}
+
+.hero-subtitle{
+margin-top:18px;
+margin-bottom:0;
+font-size:1.25rem;
+font-weight:700;
+color:rgba(255,255,255,.98);
+max-width:660px;
+}
+
+.hero-description{
+margin-top:16px;
+font-size:1.08rem;
+line-height:1.75;
+max-width:660px;
+color:rgba(255,255,255,.90);
+}
+
+.hero-buttons{
+display:flex;
+gap:14px;
+flex-wrap:wrap;
+margin-top:30px;
+}
+
+.btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:14px 22px;
+border-radius:999px;
+font-weight:700;
+text-decoration:none;
+transition:.2s ease;
+}
+
+.btn-primary{
+background:#D9A441;
+color:#10263d;
+border:1px solid #D9A441;
+}
+
+.btn-primary:hover{
+transform:translateY(-1px);
+filter:brightness(1.02);
+}
+
+.btn-secondary{
+background:rgba(255,255,255,.10);
+color:white;
+border:1px solid rgba(255,255,255,.22);
+backdrop-filter:blur(6px);
+}
+
+.btn-secondary:hover{
+background:rgba(255,255,255,.16);
+}
+
+@media (max-width: 900px){
+.hero-grid{
+grid-template-columns:1fr;
+gap:40px;
+}
+
+.hero-left{
+align-items:flex-start;
+}
+}
+.priority{
+background:rgba(255,255,255,.14);
+border:1px solid rgba(255,255,255,.22);
+padding:16px 18px;
+border-radius:16px;
+margin-top:24px;
+font-weight:600;
+max-width:740px;
+backdrop-filter:blur(6px);
+}
+
+.button-row{
+display:flex;
+gap:14px;
+flex-wrap:wrap;
+margin-top:28px;
+}
+
+.button{
+display:inline-block;
+padding:15px 24px;
+border-radius:999px;
+font-weight:700;
+text-decoration:none;
+transition:.18s ease;
+}
+
+.button-primary{
+background:#D9A441;
+color:#1a1a1a;
+box-shadow:0 10px 24px rgba(0,0,0,.22);
+}
+
+.button-primary:hover{
+transform:translateY(-2px);
+}
+
+.button-secondary{
+background:rgba(255,255,255,.12);
+color:white;
+border:1px solid rgba(255,255,255,.2);
+}
+
+.hero-card{
+background:rgba(255,255,255,.14);
+border:1px solid rgba(255,255,255,.22);
+border-radius:26px;
+padding:24px;
+box-shadow:0 20px 50px rgba(0,0,0,.22);
+backdrop-filter:blur(10px);
+color:white;
+}
+
+.hero-photo{
+width:100%;
+max-width:280px;
+aspect-ratio:1/1;
+object-fit:cover;
+border-radius:24px;
+display:block;
+margin:0 auto 20px auto;
+border:3px solid rgba(255,255,255,.18);
+box-shadow:0 12px 28px rgba(0,0,0,.22);
+}
+
+.hero-card h3{
+margin:0 0 16px 0;
+font-size:1.45rem;
+text-align:center;
+}
+
+.mini-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+margin-top:18px;
+}
+
+.mini-box{
+background:rgba(255,255,255,.10);
+border:1px solid rgba(255,255,255,.14);
+border-radius:16px;
+padding:15px;
+}
+
+.mini-box strong{
+display:block;
+font-size:1.05rem;
+margin-bottom:4px;
+}
+
+.mini-box span{
+font-size:.92rem;
+color:rgba(255,255,255,.88);
+}
+
+.section{
+padding:88px 0;
+}
+
+.section h2{
+font-size:clamp(2rem,3vw,3rem);
+margin-bottom:14px;
+color:#1E3A5F;
+}
+
+.section-intro{
+max-width:760px;
+color:#5A6876;
+font-size:1.04rem;
+}
+
+.card-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:24px;
+margin-top:30px;
+}
+
+.card{
+background:white;
+border:1px solid #e3e7ee;
+border-radius:20px;
+padding:24px;
+box-shadow:0 8px 22px rgba(30,58,95,.06);
+}
+
+.card h3{
+margin-top:0;
+color:#1E3A5F;
+}
+
+@media (max-width:900px){
+
+.hero-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container">
+<nav>
+
+<div class="brand">
+Pre-Med Mentorship
+</div>
+
+<div class="nav-links">
+<a href="#about">About</a>
+<a href="#who">Who It's For</a>
+<a href="#help">Mentorship</a>
+<a href="#apply">Apply</a>
+<a href="#faq">FAQ</a>
+</div>
+
+</nav>
+</div>
+</header>
+
+<section class="hero">
+<div class="container hero-grid">
+
+<div class="hero-left">
+
+<div class="eyebrow">
+Free • Virtual • Longitudinal Mentorship
+</div>
+
+<h1 class="hero-title">
+INTERIM
+</h1>
+
+<p class="hero-subtitle">
+Expanding Access to the Path to Medicine
+</p>
+
+<p class="hero-acronym">
+<strong>I</strong>nitiative for <strong>N</strong>avigation, <strong>T</strong>raining, and <strong>E</strong>mpowerment for <strong>R</strong>epresentation <strong>i</strong>n <strong>M</strong>edicine
+</p>
+
+<p>
+Supporting students in the interim between aspiring to medicine and becoming a physician.
+</p>
+
+<p>
+I'm Laura, a medical student at the Keck School of Medicine of USC offering individualized mentorship for students navigating the path to medicine without physicians in their family or strong healthcare connections. I will be your biggest cheerleader throughout the process: rooting for you, encouraging you, and supporting you at every stage of your journey.
+</p>
+
+<div class="priority">
+Priority is given to students without physicians in their family or strong mentorship networks in healthcare. Applications from Hispanic students are especially encouraged, given well-documented gaps in physician representation and mentorship access.
+<div class="button-row">
+
+<a class="button button-primary" href="#apply">
+Apply for Mentorship
+</a>
+
+<a class="button button-secondary" href="#about">
+Learn More
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-card">
+
+<img src="PA_headshot.jpg" alt="Laura G headshot" class="hero-photo">
+
+<h3>Mentorship Highlights</h3>
+
+<div class="mini-grid">
+
+<div class="mini-box">
+<strong>15+ students</strong>
+<span>Mentored individually</span>
+</div>
+
+<div class="mini-box">
+<strong>Keck School of Medicine</strong>
+<span>Medical student mentor</span>
+</div>
+
+<div class="mini-box">
+<strong>Practical Advice</strong>
+<span>Clear, personalized guidance</span>
+</div>
+
+<div class="mini-box">
+<strong>Longitudinal</strong>
+<span>Individualized one-on-one mentorship</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</section>
+<section class="section" id="about">
+<div class="container">
+
+<h2>About Me</h2>
+
+<p class="section-intro">
+My name is Laura and I'm a medical student at the Keck School of Medicine of USC who cares deeply about mentorship, expanding access to the path to medicine, and supporting students who are navigating the pre-med journey without strong guidance or connections in healthcare.
+
+<div class="card-grid">
+
+<div class="card">
+
+<h3>My Background</h3>
+
+<p>
+I completed my undergraduate studies at USC and pursued medicine because of the opportunity to be present with patients during vulnerable moments and support them through difficult situations.
+</p>
+
+<p style="margin-top:12px;">
+I come from a Middle Eastern background and have spent much of my clinical and volunteer work serving underserved Spanish-speaking communities across Los Angeles County.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Clinical and Community Experience</h3>
+
+<p>
+Many of my experiences in healthcare have involved working with Spanish-speaking patients and communities that face barriers to care, including language barriers, lack of access, and limited healthcare resources.
+</p>
+
+<p style="margin-top:12px;">
+These experiences reinforced how important representation and language-concordant care can be. Patients often feel more comfortable and understood when their physicians share similar backgrounds or cultural experiences.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Mentorship Experience</h3>
+
+<p>
+Over the past several years I have mentored more than 15 students individually and longitudinally as they navigated different stages of the pre-med journey.
+</p>
+
+<p style="margin-top:12px;">
+Through these experiences, I realized how little mentorship many students receive while trying to figure out the process on their own.
+</p>
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+
+<section class="section" style="background:#eef3f8;">
+
+<div class="container">
+
+<h2>Why This Mentorship Exists</h2>
+
+<p class="section-intro">
+This mentorship exists because I began to see how many students were trying to navigate the path to medicine without guidance, mentorship, or family members in healthcare who could help explain the process.
+</p>
+
+
+<div class="card-grid">
+
+<div class="card">
+
+<h3>Paying Mentorship Forward</h3>
+
+<p>
+I was incredibly fortunate to have mentors who helped guide me through different stages of the pre-med journey. Their advice and encouragement made a huge difference in helping me move forward with confidence.
+</p>
+
+<p style="margin-top:12px;">
+Because of that support, I feel a strong desire to pay that mentorship forward and help other students who may not have the same access to guidance.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>Students Without Connections</h3>
+
+<p>
+Many talented students are fully capable of becoming excellent physicians, but they are navigating the pre-med process without physicians in their family or mentors who can help explain how the system works.
+</p>
+
+<p style="margin-top:12px;">
+My goal is to help make that path clearer and less isolating for students who feel like they are figuring everything out on their own.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>Representation in Medicine</h3>
+
+<p>
+Through my clinical work and volunteering with underserved communities, I have seen how important representation can be in medicine.
+</p>
+
+<p style="margin-top:12px;">
+Patients often benefit when physicians share cultural backgrounds, language, or lived experiences with the communities they serve. Supporting students from diverse backgrounds and expanding access to mentorship ultimately helps strengthen healthcare for the communities physicians serve.
+</p>
+
+</div>
+
+</div>
+
+<p style="margin-top:28px;max-width:760px;">
+I’m excited to support students as they navigate their journey into medicine, and to be a small part of helping them succeed.
+</p>
+
+</div>
+
+</section>
+
+
+
+<section class="section">
+
+<div class="container">
+
+<h2>Core Values</h2>
+
+<p class="section-intro">
+This mentorship is built around encouragement, honesty, and helping students move forward with clarity and confidence.
+</p>
+
+
+<div class="card-grid">
+
+<div class="card">
+<h3>Service</h3>
+<p>
+Supporting students who hope to serve underserved communities and pursue medicine with a sense of purpose.
+</p>
+</div>
+
+
+<div class="card">
+<h3>Encouragement</h3>
+<p>
+Providing mentorship that is both honest and supportive so students feel capable of pursuing medicine even when the path feels uncertain.
+</p>
+</div>
+
+
+<div class="card">
+<h3>Transparency</h3>
+<p>
+Helping students understand the unspoken parts of the pre-med process so they can make informed decisions with less guesswork.
+</p>
+</div>
+
+
+<div class="card">
+<h3>Representation</h3>
+<p>
+Encouraging more students from diverse backgrounds to pursue medicine and serve the communities that need them.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+<section class="section" id="who" style="background:#f8fafc;">
+<div class="container">
+
+<h2>Who This Mentorship Is For</h2>
+
+<p class="section-intro">
+I especially created this mentorship for students who are navigating the path to medicine without physicians in their family, without strong healthcare connections, or without access to the kind of guidance that makes the process easier to understand.
+</p>
+
+<div class="card-grid">
+
+<div class="card">
+<h3>Priority Applicants</h3>
+<p>
+Priority is given to students without physicians in their family or strong healthcare connections. Applications from Hispanic students are especially encouraged, given well-documented gaps in physician representation and mentorship access.
+<div class="button-row">
+</p>
+</div>
+
+<div class="card">
+<h3>Students Without Connections</h3>
+<p>
+This mentorship is for students from underserved, immigrant, first-generation, or low-resource backgrounds, and for anyone trying to figure out the pre-med path without strong advising or family connections in medicine.
+</p>
+</div>
+
+<div class="card">
+<h3>Students Interested in Service</h3>
+<p>
+This is a strong fit for students who hope to serve underserved communities, value representation in medicine, and want to build a career that is both meaningful and community-centered.
+</p>
+</div>
+
+<div class="card">
+<h3>All Students Welcome</h3>
+<p>
+Even if you do not fit the priority categories above, you are still welcome to apply if you feel this mentorship would be helpful for your journey.
+</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+
+<section class="section" id="help">
+<div class="container">
+
+<h2>What I Can Help With</h2>
+
+<p class="section-intro">
+Mentorship is individualized to where you are in the journey. Some students come with specific application questions, while others want broader guidance over time as they make decisions and move through different stages of the pre-med process.
+</p>
+
+<div class="card-grid">
+
+<div class="card">
+<h3>Course Planning and Academic Direction</h3>
+<p>
+I can help you think through pre-med course planning, academic priorities, and how to build a realistic path forward without unnecessary overwhelm.
+</p>
+</div>
+
+<div class="card">
+<h3>Personal Statement and Application Strategy</h3>
+<p>
+I can help you shape your story, strengthen your writing, and think strategically about how to approach the application process.
+</p>
+</div>
+
+<div class="card">
+<h3>Extracurricular and Research Guidance</h3>
+<p>
+I can help you think through extracurricular choices, research opportunities, and how to build experiences that are meaningful rather than just checking boxes.
+</p>
+</div>
+
+<div class="card">
+<h3>Honest Advice About Medicine</h3>
+<p>
+You can ask candid questions about the realities of medicine, medical training, and whether this path feels aligned with your goals and values.
+</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+
+<section class="section" style="background:#eef3f8;">
+<div class="container">
+
+<h2>How Mentorship Works</h2>
+
+<p class="section-intro">
+This mentorship is not designed to be just a one-time conversation. While we may begin with an initial meeting, my goal is to offer longitudinal support so students can continue checking in as new questions, challenges, and opportunities come up their journey.
+</p>
+
+<div class="card-grid">
+
+<div class="card">
+<h3>Step 1: Apply</h3>
+<p>
+Submit the mentorship application and share a little about your background, goals, and what kind of support would be most helpful right now.
+</p>
+</div>
+
+<div class="card">
+<h3>Step 2: Initial Conversation</h3>
+<p>
+If selected, we will start with an initial one-on-one conversation to talk through your goals, questions, and where you are in the process.
+</p>
+</div>
+
+<div class="card">
+<h3>Step 3: Ongoing Check-Ins</h3>
+<p>
+Many students continue mentorship longitudinally, checking in again at different stages of the pre-med journey as new decisions and questions arise.
+</p>
+</div>
+
+<div class="card">
+<h3>Step 4: Support Over Time</h3>
+<p>
+The goal is to provide individualized guidance over time, not just a single session, so that students feel more supported as they move forward.
+</p>
+</div>
+
+</div>
+
+<div class="card" style="margin-top:24px;">
+<h3>Format</h3>
+<p>
+Mentorship is virtual and one-on-one. Most conversations begin as 30-minute sessions, with flexibility to go longer when needed depending on the student and the stage of the journey.
+</p>
+</div>
+
+</div>
+</section>
+<section class="section" id="apply">
+<div class="container">
+
+<h2>Apply for Mentorship</h2>
+
+<p class="section-intro">
+Mentorship is free, virtual, and designed to be individualized over time. If selected, you may begin with an initial one-on-one conversation and continue with longitudinal check-ins as new questions and decisions come up throughout your journey.
+</p>
+
+<div class="card-grid" style="grid-template-columns:1fr 1fr;">
+
+<div class="card">
+<h3>What You Can Expect</h3>
+
+<ul style="margin-top:10px;padding-left:18px;">
+<li>Free virtual mentorship on Zoom</li>
+<li>Individualized one-on-one guidance</li>
+<li>An initial conversation with the possibility of ongoing check-ins</li>
+<li>Priority for students without physicians in their family or strong healthcare connections, with Hispanic students especially encouraged</li>
+<li>A supportive space for questions about academics, applications, and the path to medicine</li>
+</ul>
+
+<div style="margin-top:24px;">
+<a class="button button-primary"
+href="https://docs.google.com/forms/d/e/1FAIpQLSe_nJ6INId6r5mVilIy1F5vcjs9-YpKNe2r9337sNUCFy_d2w/viewform?usp=dialog"
+target="_blank"
+rel="noopener noreferrer">
+Open Application Form
+</a>
+</div>
+
+<p style="margin-top:14px;font-size:14px;color:#5a6876;">
+Submitting an application does not guarantee a mentorship spot.
+</p>
+
+</div>
+
+<div class="card">
+<h3>What the Application Asks</h3>
+
+<p>
+The application is meant to help me understand your background, where you are in the pre-med journey, and what kind of support would be most helpful.
+</p>
+
+<ul style="margin-top:12px;padding-left:18px;">
+<li>Your school and year in school</li>
+<li>Whether there are physicians in your family</li>
+<li>Why you are seeking mentorship</li>
+<li>What you most want help with</li>
+<li>Your long-term goals in medicine</li>
+<li>Your availability for an initial conversation</li>
+</ul>
+
+<p style="margin-top:14px;">
+If selected, I will reach out with next steps for scheduling.
+</p>
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+
+<section class="section" id="faq" style="background:#f8fafc;">
+<div class="container">
+
+<h2>Frequently Asked Questions</h2>
+
+<div class="card-grid" style="margin-top:30px;">
+
+<div class="card">
+<h3>Who is eligible for mentorship?</h3>
+<p>
+Any pre-med student is welcome to apply. Priority is given to students without physicians in their family or strong mentorship networks in healthcare. Applications from Hispanic students are especially encouraged.
+</p>
+</div>
+
+<div class="card">
+<h3>Do I have to be Hispanic to apply?</h3>
+<p>
+No. All students are welcome to apply. The priority categories reflect the communities I especially hope to support, but the mentorship is open to anyone who feels it would be helpful.
+</p>
+</div>
+
+<div class="card">
+<h3>Is this mentorship really free?</h3>
+<p>
+Yes. Mentorship is offered free of charge.
+</p>
+</div>
+
+<div class="card">
+<h3>Is this just one session?</h3>
+<p>
+No. While mentorship may begin with an initial conversation, my goal is to offer longitudinal support over time so students can continue checking in as their journey progresses.
+</p>
+</div>
+
+<div class="card">
+<h3>Is mentorship virtual?</h3>
+<p>
+Yes. Conversations take place over Zoom.
+</p>
+</div>
+
+<div class="card">
+<h3>How do I contact you?</h3>
+<p>
+The best way to reach me is through the application form. I do not post my personal contact information publicly on the website.
+</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+</div>
+</section>
+
+
+
+<footer style="background:#1E3A5F;color:white;padding:55px 0;">
+<div class="container">
+
+<h3 style="margin-top:0;color:white;">Pre-Med Mentorship</h3>
+
+<p style="color:rgba(255,255,255,.88);max-width:700px;margin-top:10px;">
+A mentorship space designed to help students navigate the path to medicine with more clarity, encouragement, and support over time.
+</p>
+
+<p style="color:rgba(255,255,255,.7);margin-top:26px;font-size:14px;">
+© Laura G. All rights reserved.
+</p>
+
+</div>
+</footer>
+
+</body>
+</html>
+
+
+
+
+
+
+
