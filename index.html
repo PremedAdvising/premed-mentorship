@@ -223,10 +223,6 @@ backdrop-filter:blur(6px);
 background:rgba(255,255,255,.16);
 }
 
-.hero-left{
-align-items:flex-start;
-}
-}
 .priority{
 background:rgba(255,255,255,.14);
 border:1px solid rgba(255,255,255,.22);
@@ -359,12 +355,11 @@ margin-top:0;
 color:#1E3A5F;
 }
 
-@media (max-width:900px){
-
-.hero-grid{
-grid-template-columns:1fr;
-}
-
+@media (max-width:700px){
+  .hero-grid{
+    grid-template-columns:1fr;
+    gap:40px;
+  }
 }
 
 </style>
